@@ -1,7 +1,7 @@
 ﻿# ExamHub 技术栈
 
-> **文档版本：** v1.0.0
-> **最后更新：** 2026-07-10
+> **文档版本：** v1.2.0
+> **最后更新：** 2026-07-13
 
 ---
 
@@ -106,6 +106,7 @@
 | zod / joi            | 参数校验 |
 | winston / pino       | 日志   |
 | dotenv               | 环境变量 |
+| selenium-webdriver | 自动化爬取（Chalk 采集器） |
 | node-schedule / cron | 定时任务 |
 | nodemailer           | 邮件发送 |
 | dayjs                | 时间处理 |

@@ -1,7 +1,7 @@
 ﻿# ExamHub 导入器（Importer）
 
-> **文档版本：** v1.0.0
-> **最后更新：** 2026-07-10
+> **文档版本：** v1.2.0
+> **最后更新：** 2026-07-13
 
 ---
 
@@ -254,4 +254,4 @@ D. 选项 D
 
 ---
 
-*本文档定义 Importer 的架构设计。导入后的题目和试卷管理见 \docs/architecture/01-Content-Center.md\。*
+*本文档定义 Importer 的架构设计。导入后的题目和试卷管理见 \docs/architecture/01-Content-Center.md\。自动化采集见 \docs/architecture/07-Chalk.md\，采集结果可作为 Importer 的输入源。*
