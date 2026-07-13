@@ -51,14 +51,14 @@ export class ChalkCrawler {
   }
 
   /** 点击某个元素 */
-  async clickElement(xpath: string): Promise<void> {
-    const button = await this.findElement(xpath)
+  async clickElement(selector: string, type = 'xpath'): Promise<void> {
+    const button = await this.findElement(selector, type)
     await this.getDriver().executeScript<void>('arguments[0].click()', button)
   }
 
   /** 填写输入框 */
-  async fillElement(xpath: string, value: string): Promise<void> {
-    const input = await this.findElement(xpath)
+  async fillElement(selector: string, value: string, type = 'xpath'): Promise<void> {
+    const input = await this.findElement(selector, type)
     await input.sendKeys(value)
   }
 
@@ -117,14 +117,14 @@ export class ChalkCrawler {
     await driver.get(chalkConfig.sourceUrl)
     await driver.manage().window().maximize()
 
-    await this.clickElement('//*[@id="headercontent"]/div[2]/div/div')
+    await this.clickElement('button.login-button', 'css')
     await this.sleep()
-    await this.clickElement('//*[@id="fenbi-web-header"]/fb-header/div[2]/div/div[2]/div[5]/div/span')
-    await this.fillElement('//*[@id="fenbi-web-header"]/fb-header/div[2]/div/div[2]/div[1]/input', chalkConfig.username)
-    await this.fillElement('//*[@id="fenbi-web-header"]/fb-header/div[2]/div/div[2]/div[2]/input', chalkConfig.password)
-    await this.clickElement('//*[@id="fenbi-web-header"]/fb-header/div[2]/div/div[2]/div[6]/div[1]')
+    await this.clickElement("//span[contains(text(),'账号密码登录')]")
     await this.sleep()
-    await this.clickElement('//*[@id="fenbi-web-header"]/fb-header/div[2]/div/div[2]/div[4]/div/div')
+    await this.fillElement('input.fenbi-login-modal-form-input[type="text"]', chalkConfig.username, 'css')
+    await this.fillElement('input.fenbi-login-modal-form-input[type="password"]', chalkConfig.password, 'css')
+    await this.clickElement('.fenbi-login-modal-agreement-checkbox', 'css')
+    await this.clickElement('.fenbi-login-modal-form-button', 'css')
     await this.sleep()
     await this.setCookies()
   }

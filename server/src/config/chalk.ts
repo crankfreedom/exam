@@ -21,8 +21,8 @@ export interface ChalkConfig {
 export const chalkConfig: ChalkConfig = {
   sourceUrl: 'https://www.fenbi.com/page/home',
   catalogUrl: 'https://www.fenbi.com/spa/tiku/guide/catalog/xingce?prefix=xingce',
-  username: '',
-  password: '',
+  username: '15872332385',
+  password: 'cxj7425313x',
   outputDir: './examination',
   browser: 'chrome',
 }

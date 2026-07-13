@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import ChalkCrawler from '../models/chalk'
+import ChalkCrawler from '../models/chalk.ts'
 import Save from '@/utils/save'
 import { chalkConfig } from '@/config/chalk'
 import type { ExamPaper } from '../types'
