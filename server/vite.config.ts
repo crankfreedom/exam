@@ -8,7 +8,7 @@ export default defineConfig({
     },
   },
   build: {
-    ssr: 'src/index.ts',
+    ssr: 'src/app.ts',
     outDir: 'dist',
     target: 'es2022',
     minify: false,

@@ -29,7 +29,7 @@ D:\codex\exam\
 - [ ] 根级 `tsconfig.json`（paths/aliases）
 - [ ] 根级 ESLint + Prettier 配置
 - [ ] `.gitignore`（排除 node_modules, dist, .env）
-- [ ] `.env.example`（全部环境变量模板）
+- [ ] `src/config/` 配置模块（配置值直接书写，参考 config/env.ts，不从 process.env 获取）
 - [ ] root scripts（dev, build, lint, test）
 
 ### 步骤 2：packages/shared 共享模块
@@ -93,14 +93,14 @@ D:\codex\exam\
 
 **目标：** Express 应用可启动，健康检查通过。
 
-- [ ] `backend/package.json`（依赖：express, typescript, cors, helmet, compression, dotenv, zod, winston 等）
+- [ ] `backend/package.json`（依赖：express, typescript, cors, helmet, compression, zod, winston 等）
 - [ ] `backend/tsconfig.json`（严格模式，paths 指向 shared）
 - [ ] `backend/src/app.ts` — Express 入口：
   - 中间件链注册
   - 路由前缀 `/api/v1`
   - 全局错误处理
   - GET /health + GET /health/ready
-- [ ] `backend/src/config/` — 配置模块（环境变量加载、聚合导出）
+- [ ] `backend/src/config/` - 配置模块（配置值直接书写、聚合导出，参考 config/env.ts）
 - [ ] `backend/src/utils/` — 后端工具：
   - `response.ts`：统一响应格式 { code, data, message }
   - `errors.ts`：AppError 及业务异常子类

@@ -40,6 +40,7 @@
 6. URL 设计遵循 SEO 先行原则
 7. 架构变更必须通过 ADR 记录
 8. 为 V2/V3 预留扩展点，但不在 V1 做 V3 的事
+9. 应用配置直接书写在 src/config/ 模块中（参考 config/env.ts），不从 process.env 获取
 
 ## Workflow
 1. 阅读 Task 定义和相关文档
@@ -60,3 +61,4 @@
 - [ ] 是否为 V2/V3 预留扩展点
 - [ ] 是否需要创建 ADR
 - [ ] 是否在 V1 范围内（不做过早设计）
+- [ ] 配置是否直接书写在 src/config/ 模块中（不从 process.env 获取）

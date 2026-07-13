@@ -18,7 +18,6 @@
 - cors：^2.8.5
 - helmet：^8.0.0
 - uuid：^14.0.1
-- dotenv：^16.4.0
 - selenium-webdriver：^4.46.0
 - nodemon：^3.1.0
 - vite-node：^3.0.0

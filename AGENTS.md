@@ -106,6 +106,7 @@ exam/
 |------|---------|
 | 将 PDF 作为数据源 | 始终从 Question -> Paper -> Render |
 | 硬编码 URL | 使用配置或路由系统 |
+| 从 process.env 获取配置 | 配置直接书写在 src/config/ 模块中（参考 config/env.ts） |
 | 不使用唯一编号 | 使用统一编号系统 |
 | 跨越 V1 范围做 V3 功能 | 在 V1 约定范围内实现 |
 | 直接操作生产数据库 | 通过 Migration + Service |

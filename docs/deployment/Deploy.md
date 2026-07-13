@@ -61,6 +61,8 @@
 
 ### 2.2 环境变量配置
 
+> **注意：** 应用层配置直接书写在 `src/config/` 模块中（参考 `config/env.ts`），不从 `process.env` 获取。下方变量清单仅作为部署期基础设施（数据库、Redis 等）的连接信息参考，应用模块按需在 config 中直接书写。
+
 ```bash
 # 应用
 NODE_ENV=production

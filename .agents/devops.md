@@ -7,7 +7,7 @@
 - 配置 Nginx 反向代理
 - 配置 SSL 证书
 - 配置监控和告警
-- 管理环境变量
+- 管理部署配置
 - 数据库备份
 - 日志管理
 ## Out Of Scope
@@ -27,7 +27,7 @@
 - 监控/备份配置
 - 运维文档
 ## Rules
-1. 配置通过环境变量注入
+1. 应用配置直接书写在 src/config/ 模块中（参考 config/env.ts），不从 process.env 获取
 2. 敏感信息不硬编码
 3. Docker 多阶段构建
 4. 生产用 Docker Compose
@@ -45,7 +45,7 @@
 7. 配置监控
 8. 配置备份
 ## Checklist
-- [ ] 环境变量全部注入
+- [ ] 应用配置直接书写在 src/config/ 模块中
 - [ ] Docker 构建通过
 - [ ] Nginx 配置正确
 - [ ] CI/CD 流水线完整

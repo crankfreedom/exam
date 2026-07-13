@@ -36,3 +36,9 @@
 - Service 层抛出业务异常
 - Controller 层捕获并转换
 - 全局错误中间件兜底
+
+## 配置规范
+- 配置直接书写在 src/config/ 模块中，参考 config/env.ts 的写法（定义 Interface -> 导出 const 直接赋值）
+- 不从 process.env 获取配置值，不使用 dotenv / .env
+- 新增配置模块时通过 config/index.ts 聚合导出
+- 配置项必须有类型标注，TypeScript 严格模式

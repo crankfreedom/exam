@@ -1,11 +1,11 @@
-import { getIpAddress } from "@/utils/normalized"
+import { getIpAddress } from '@/utils/normalized'
 
 export interface Env {
   HOST: string
   PORT: number
 }
 
-export const Environment: Env = {
+export const env: Env = {
   HOST: getIpAddress(),
   PORT: 3000
 }

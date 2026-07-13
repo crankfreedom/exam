@@ -2,6 +2,6 @@
   "watch": ["src"],
   "ext": "ts,json",
   "ignore": ["dist", "node_modules"],
-  "exec": "vite-node src/index.ts",
+  "exec": "vite-node src/app.ts",
   "delay": "500"
 }
