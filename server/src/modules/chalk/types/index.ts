@@ -65,12 +65,5 @@ export interface ExamPaper {
   articles: ExamArticle[]
 }
 
-/** 截图返回信息 */
-export interface ScreenshotResult {
-  name: string
-  width: number
-  height: number
-}
-
 export type ChalkDriver = WebDriver
 export type ChalkElement = WebElement
