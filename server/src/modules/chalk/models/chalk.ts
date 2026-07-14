@@ -1,9 +1,17 @@
 import { By, type WebElement } from 'selenium-webdriver'
 import { WebCrawler } from '@/utils/web-crawler'
 import { chalkConfig } from '@/modules/chalk/config/chalk'
+import { ChalkLogin } from '../services/chalk-login'
 import type { ExamOption, ExamArticle, ExamAnalysis, ExamPaper } from '../types'
 
 export class ChalkCrawler extends WebCrawler {
+  private readonly loginService: ChalkLogin
+
+  constructor() {
+    super()
+    this.loginService = new ChalkLogin(this)
+  }
+
   /** 初始化 WebDriver（使用 chalk 配置的浏览器） */
   async init(): Promise<void> {
     await super.init(chalkConfig.browser)
@@ -11,21 +19,9 @@ export class ChalkCrawler extends WebCrawler {
 
   // ─── 登录 ───
 
+  /** 委托通用登录服务执行粉笔网登录 */
   async login(): Promise<void> {
-    const driver = this.getDriver()
-    await driver.get(chalkConfig.sourceUrl)
-    await driver.manage().window().maximize()
-
-    await this.clickElement('button.login-button', 'css')
-    await this.sleep()
-    await this.clickElement("//span[contains(text(),'账号密码登录')]")
-    await this.sleep()
-    await this.fillElement('input.fenbi-login-modal-form-input[type="text"]', chalkConfig.username, 'css')
-    await this.fillElement('input.fenbi-login-modal-form-input[type="password"]', chalkConfig.password, 'css')
-    await this.clickElement('.fenbi-login-modal-agreement-checkbox', 'css')
-    await this.clickElement('.fenbi-login-modal-form-button', 'css')
-    await this.sleep()
-    await this.setCookies()
+    await this.loginService.login()
   }
 
   // ─── 题目提取 ───

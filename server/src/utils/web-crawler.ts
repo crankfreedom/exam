@@ -38,6 +38,16 @@ export class WebCrawler {
     return this.driver
   }
 
+  /** 导航到指定 URL */
+  async navigate(url: string): Promise<void> {
+    await this.getDriver().get(url)
+  }
+
+  /** 最大化浏览器窗口 */
+  async maximizeWindow(): Promise<void> {
+    await this.getDriver().manage().window().maximize()
+  }
+
   // ─── 页面操作辅助方法 ───
 
   /** 根据类型将选择器字符串转为 Selenium Locator */
