@@ -4,10 +4,6 @@
  */
 
 export interface ChalkConfig {
-  /** 目标网站首页 URL */
-  sourceUrl: string
-  /** 题库目录页 URL */
-  catalogUrl: string
   /** 第三方网站登录账号 */
   username: string
   /** 第三方网站登录密码 */
@@ -19,8 +15,6 @@ export interface ChalkConfig {
 }
 
 export const chalkConfig: ChalkConfig = {
-  sourceUrl: 'https://www.fenbi.com/page/home',
-  catalogUrl: 'https://www.fenbi.com/spa/tiku/guide/catalog/xingce?prefix=xingce',
   username: '15872332385',
   password: 'cxj7425313x',
   outputDir: './examination',

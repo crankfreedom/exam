@@ -1,4 +1,4 @@
-import { chalkConfig } from '@/modules/chalk/config/chalk'
+import { chalkConfig } from '@/modules/chalk/config'
 import type { WebCrawler } from '@/utils/web-crawler'
 
 /**
@@ -6,13 +6,15 @@ import type { WebCrawler } from '@/utils/web-crawler'
  * 封装粉笔网账号密码登录流程，供 chalk 模块下各爬虫复用。
  */
 export class ChalkLogin {
-  constructor(private readonly crawler: WebCrawler) {}
+  private baseUrl: string = 'https://www.fenbi.com/page/home'
+
+  constructor(private readonly crawler: WebCrawler) { }
 
   /** 执行粉笔网账号密码登录，登录后自动保存 Cookies */
   async login(): Promise<void> {
-    const { sourceUrl, username, password } = chalkConfig
+    const { username, password } = chalkConfig
 
-    await this.crawler.navigate(sourceUrl)
+    await this.crawler.navigate(this.baseUrl)
     await this.crawler.maximizeWindow()
 
     await this.crawler.clickElement('button.login-button', 'css')

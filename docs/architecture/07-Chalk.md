@@ -273,8 +273,6 @@ Chalk 配置直接书写在 `config/chalk.ts` 中（参考 `config/env.ts`），
 
 | 配置项 | 说明 | 默认值 |
 |---------|------|------|
-| `sourceUrl` | 目标网站首页 URL | `https://www.fenbi.com/page/home` |
-| `catalogUrl` | 题库目录页 URL | `https://www.fenbi.com/spa/tiku/guide/catalog/xingce?prefix=xingce` |
 | `username` | 第三方网站登录账号 | - |
 | `password` | 第三方网站登录密码 | - |
 | `outputDir` | 采集结果输出目录 | `./examination` |

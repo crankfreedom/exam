@@ -2,7 +2,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { spawn, type ChildProcess } from 'node:child_process'
 
-interface CreateExaminationParams {
+interface CreateSmartPaperParams {
   num: number
 }
 
@@ -17,10 +17,10 @@ interface TaskMessage {
  * 使用 vite-node 运行子进程（与主服务一致），
  * 确保 @/ 路径别名和 ESM + TS 均可正常解析。
  */
-export async function createExamination({ num }: CreateExaminationParams): Promise<void> {
+export async function createSmartPaper({ num }: CreateSmartPaperParams): Promise<void> {
   const taskPath = path.resolve(
     path.dirname(fileURLToPath(import.meta.url)),
-    '../tasks/create-exam-paper.ts',
+    '../tasks/create-smart-paper.ts',
   )
 
   const viteNodeBin = path.resolve(

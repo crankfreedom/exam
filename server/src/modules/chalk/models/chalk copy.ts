@@ -1,11 +1,12 @@
 import { By, type WebElement } from 'selenium-webdriver'
 import { WebCrawler } from '@/utils/web-crawler'
-import { chalkConfig } from '@/modules/chalk/config/chalk'
+import { chalkConfig } from '@/modules/chalk/config'
 import { ChalkLogin } from '../services/chalk-login'
 import type { ExamOption, ExamArticle, ExamAnalysis, ExamPaper } from '../types'
 
 export class ChalkCrawler extends WebCrawler {
   private readonly loginService: ChalkLogin
+  private paperUrl: string = 'https://www.fenbi.com/spa/tiku/guide/catalog/xingce?prefix=xingce'
 
   constructor() {
     super()
@@ -126,7 +127,7 @@ export class ChalkCrawler extends WebCrawler {
     const driver = this.getDriver()
     await this.sleep()
 
-    await driver.get(chalkConfig.catalogUrl)
+    await driver.get(this.paperUrl)
     await this.sleep()
 
     // 点击智能组卷
@@ -177,7 +178,7 @@ export class ChalkCrawler extends WebCrawler {
   async moduleAnswer(): Promise<void> {
     const driver = this.getDriver()
     await this.sleep()
-    await driver.get(chalkConfig.catalogUrl)
+    await driver.get(this.paperUrl)
     await this.sleep()
 
     const section = await this.findElement('//*[@id="calalog-page"]/main/div[1]/div[2]/app-keypoint-catalog/div/div[2]/ul')

@@ -1,14 +1,14 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import ChalkCrawler from '../models/chalk.ts'
+import SmartPaperCrawler from '../models/smartPaper.ts'
 import Save from '@/utils/save'
-import { chalkConfig } from '@/modules/chalk/config/chalk.ts'
-import type { ExamPaper } from '../types'
+import { chalkConfig } from '@/modules/chalk/config/index.ts'
+import type { ExamPaper } from '../types/index.ts'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 async function main(): Promise<void> {
-  const crawler = new ChalkCrawler()
+  const crawler = new SmartPaperCrawler()
   const save = new Save()
 
   console.log('# 登录开始 #')
