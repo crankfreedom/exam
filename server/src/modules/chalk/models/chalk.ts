@@ -1,6 +1,6 @@
 import { Builder, By, until, type WebDriver, type WebElement, type IWebDriverOptionsCookie, type Locator } from 'selenium-webdriver'
 import Save from '@/utils/save'
-import { chalkConfig } from '@/config/chalk'
+import { chalkConfig } from '@/modules/chalk/config/chalk'
 import type { ExamOption, ExamArticle, ExamAnalysis, ExamPaper, ScreenshotResult } from '../types'
 
 export class ChalkCrawler {

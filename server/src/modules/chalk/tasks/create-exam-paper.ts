@@ -2,7 +2,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import ChalkCrawler from '../models/chalk.ts'
 import Save from '@/utils/save'
-import { chalkConfig } from '@/config/chalk'
+import { chalkConfig } from '@/modules/chalk/config/chalk.ts'
 import type { ExamPaper } from '../types'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))

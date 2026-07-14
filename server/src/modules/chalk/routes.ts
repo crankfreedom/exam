@@ -9,4 +9,8 @@ router.post('/create/examination', (req, res) => {
   resWrapper(createExamination, req, res)
 })
 
+router.get('/create/examination', (req, res) => {
+  resWrapper(createExamination, req, res)
+})
+
 export default router
